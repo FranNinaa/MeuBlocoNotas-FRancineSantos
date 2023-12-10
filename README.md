@@ -18,7 +18,7 @@ O projeto é organizado nas seguintes pastas principais:
 
 **Views:** Esta pasta contém as views, que são responsáveis pela renderização da UI (User Interface).
 
-#### Classe Program
+#### Class Program
 A classe Program é o ponto de entrada da aplicação. Ela configura e executa o host da aplicação.
 
 - Como executar o projeto
