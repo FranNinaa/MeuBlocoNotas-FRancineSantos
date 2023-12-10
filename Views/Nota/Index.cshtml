@@ -1,0 +1,70 @@
+﻿@model List<NotaModel>
+@{
+    ViewData["Title"] = "Listagem de Anotações";
+}
+
+<div class="text-center">
+
+    @if(TempData["MensagemSucesso"] != null)
+    {
+       
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+            @TempData["MensagemSucesso"]
+        </div>
+    }
+    @if (TempData["MensagemErro"] != null)
+    {
+
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>            
+            @TempData["MensagemErro"]
+        </div>
+    }
+    <br />
+    <form>
+        <h1 class="display-4">Listagem de Anotações</h1>
+
+        <br />
+        <table class="table table-striped text-center" id="table-notas">
+            <thead>
+                <tr>
+                    <th scope="col">*</th>
+                    <th scope="col">Data</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Anotação</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    foreach (NotaModel anotacao in Model)
+                    {
+                        <tr>
+                            <th scope="row">@anotacao.Id</th>
+                            <td>@anotacao.DataAnotacao</td>
+                            <td>@anotacao.Titulo</td>
+                            <td>@anotacao.ConteudoAnotacao</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                    <a role="button" class="btn btn-outline-danger" asp-route-id="@anotacao.Id"
+                                    asp-controller="Nota" asp-action="ApagarConfirmacao">Apagar</a>
+
+                                    <a role="button" class="btn btn-outline-info" asp-route-id="@anotacao.Id"
+                                    asp-controller="Nota" asp-action="Editar">Editar</a>
+                                </div>
+                            </td>
+                        </tr>
+
+                    }
+                }
+            </tbody>
+        </table>
+
+    </form>
+    
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <a role="button" class="btn btn-outline-primary " asp-controller="Nota" asp-action="Criar">Adicionar uma nova Anotação</a>
+    </div>
+</div>

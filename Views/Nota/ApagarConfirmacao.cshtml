@@ -1,0 +1,16 @@
+﻿@model NotaModel
+@{
+    ViewData["Title"] = "Confirmação de Apagar uma Nota";
+}
+
+<div class="text-center">
+    <h1 style="color:fuchsia">Tem Certeza que deseja Apagar a Anotação</h1>
+    <br />
+    <h2> Data: @Model.DataAnotacao<br />@Model.Titulo<br />@Model.ConteudoAnotacao</h2>
+    <br />
+</div>
+<div class="btn-group" role="group" aria-label="Basic outlined example">
+    <a role="button" class="btn btn-outline-primary" asp-controller="Home" asp-action="Index">Cancelar</a>
+    <a role="button" class="btn btn-outline-primary" asp-controller="Nota" asp-action="Apagar" asp-route-id="@Model.Id">Confirmar</a>
+    
+</div>

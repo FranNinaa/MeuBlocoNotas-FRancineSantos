@@ -1,0 +1,48 @@
+﻿@model NotaModel
+@{
+    ViewData["Title"] = "Adicionar Anotação";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Adicionar uma Nova Anotação</h1>
+</div>
+
+<form asp-controller="Nota" asp-action="Criar" method="post">
+    @if (TempData["MensagemSucesso"] != null)
+    {
+
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" required arial-label="Close">X</button>
+            @TempData["MensagemSucesso"]
+        </div>
+    }
+    @if (TempData["MensagemErro"] != null)
+    {
+
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+            @TempData["MensagemErro"]
+        </div>
+    }
+    <br />
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Titulo</label>
+        <input type="text" asp-for="Titulo" class="form-control" id="exampleFormControlInput1">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Data</label>
+        <input type="date" asp-for="DataAnotacao"  class="form-control data" id="exampleFormControlInput1">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Anotação</label>
+        <textarea asp-for="ConteudoAnotacao" class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
+    </div>
+
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+        <button type="submit" class="btn-check btn-lg btn-block" name="btnradio" id="btnradio1"></button>
+        <label class="btn btn-outline-primary" for="btnradio1">Salvar</label>
+
+        <button type="button" class="btn-check btn-lg btn-block" name="btnradio" id="btnradio2" asp-controller="Home" asp-route-id="Index"></button>
+        <label class="btn btn-outline-primary" for="btnradio2">Voltar</label>
+    </div>
+</form>

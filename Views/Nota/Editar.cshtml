@@ -1,0 +1,41 @@
+﻿@model NotaModel
+
+@{
+    ViewData["Title"] = "Editar Anotação";
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Editar Anotação</h1>
+</div>
+<form asp-controller="Nota" asp-action="Alterar" method="post">
+
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Titulo</label>
+        <input type="text" asp-for="Titulo" class="form-control" id="exampleFormControlInput1">
+     
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Data</label>
+        <input type="date" asp-for="DataAnotacao" class="form-control" id="exampleFormControlInput1">
+        
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Anotação</label>
+        <textarea asp-for="ConteudoAnotacao" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+       
+
+        <br />
+        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <button type="submit" class="btn-check btn-lg btn-block" name="btnradio" id="btnradio1"></button>
+            <label class="btn btn-outline-primary" for="btnradio1">Editar</label>
+
+            <button type="button" class="btn-check btn-lg btn-block" name="btnradio" id="btnradio2"></button>
+            <a class="btn btn-outline-primary" for="btnradio2" asp-action="Index" asp-controller="Home">Voltar</a>
+        </div>
+    </div>
+</form>
+
+

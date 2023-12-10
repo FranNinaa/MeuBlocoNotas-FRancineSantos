@@ -1,5 +1,5 @@
 # Meu Bloco de Notas
-Este projeto "Meu Bloco de Notas" foi desenvolvido como um trabalho científico para a disciplina de Desenvolvimento Web na faculdade Uniasselvi.
+Este projeto  é uma cópia do "Meu Bloco de Notas" foi desenvolvido como um trabalho científico para a disciplina de Desenvolvimento Web na faculdade Uniasselvi.
 
 É um projeto ASP.NET Core MVC chamado "Meu Bloco de Notas". A aplicação é estruturada de acordo com o padrão MVC (Model-View-Controller) e utiliza Entity Framework Core para persistência de dados.
 

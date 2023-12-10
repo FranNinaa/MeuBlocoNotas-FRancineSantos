@@ -1,0 +1,238 @@
+/* Definição do tamanho padrão da fonte para o elemento HTML */
+html {
+    font-size: 14px;
+}
+
+/* Mídia query para ajustar o tamanho da fonte em telas maiores */
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+/* Estilização para realce visual em elementos com foco */
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+/* Estilo para o corpo do documento e posicionamento do HTML */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+/* Estilo para o botão de fechar alerta */
+.close-alert {
+    position: absolute;
+    right: -10px;
+    top: -15px;
+    border-radius: 15px;
+    width: 30px;
+    height: 31px;
+}
+
+/* Reset de estilos padrão para todos os elementos */
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo de fundo do corpo e imagem de plano de fundo */
+body {
+    background-image: url(https://img.freepik.com/vetores-gratis/nota-de-papel-sobre-fundo-de-memphis_53876-99284.jpg);
+    background-size: 100%;
+}
+
+/* Estilo para campos de entrada de dados e textarea */
+input[type="data"],
+input[type="text"],
+textarea {
+    /* Estilos comuns para os campos */
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border: 1px solid var(--corBorda);
+    border-radius: 5px;
+    font-size: 16px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* Estilo específico para textarea com 
+    capacidade de redimensionamento vertical */
+textarea {
+    resize: vertical;
+}
+
+/* Estilo adicional para o campo de data */
+input[type="data"]::after {
+    padding-right: 10%;
+}
+
+/* Estilos para o botão de data */
+.data {
+    font-size: 20px;
+    margin-left: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilos para o cabeçalho h1 com animações */
+header h1 {
+    /* Estilos comuns */
+    width: 520px;
+    text-align: center;
+    font-size: 45px;
+    color: white;
+    text-shadow: 5px 5px 10px #000000;
+    position: relative;
+    /* Animação do título */
+    animation: titulo 8s ease-out infinite;
+    font-family: cursive;
+}
+
+/* Animação personalizada do título */
+@keyframes titulo {
+    0% {
+        color: #6894F7;
+        left: -300px;
+    }
+
+    50% {
+        color: #66EC3D;
+        left: 0px;
+    }
+
+    100% {
+        color: #F7E40F;
+        left: 300px;
+    }
+}
+
+
+
+/* Estilos para a barra de navegação */
+nav {
+    margin-top: 8%;
+    text-align: center;
+    height: 80px;
+}
+
+    /* Estilos para a lista não ordenada dentro da navegação */
+    nav ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    /* Estilos para os itens de lista na navegação */
+    nav li {
+        font-size: 40px;
+        margin: 0 5% 0 5%;
+        padding: 2px 10px 2px 10px;
+        display: inline-block;
+        font-family: French Script MT;
+        border-radius: 10%;
+        border: 2px solid black;
+    }
+
+/* Efeito de escala e animação no hover dos itens de lista */
+li:hover {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+    animation: rosa 8s ease-out infinite;
+}
+
+/* Estilos para os links dentro dos itens de lista */
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Efeito de transição de cor no hover dos links */
+nav li a:hover {
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+/* Estilos para a imagem responsiva */
+.imagem {
+    max-width: 100%;
+}
+
+/* Estilos para o texto de cores */
+.colores {
+    text-align: left;
+    font-family: Baskerville Old Face;
+    font-size: 40px;
+}
+
+/* Estilos responsivos para telas menores que 480px */
+@media all and (max-width: 480px) {
+    /* Ajuste do tamanho do título e animação para telas pequenas */
+    header h1 {
+        font-size: 20px;
+        text-align: left;
+        animation: titulo 2s linear infinite;
+    }
+
+    /* Animação personalizada do título para telas pequenas */
+    @keyframes titulo {
+        0% {
+            left: -5px;
+        }
+
+        50% {
+            left: 0px;
+        }
+
+        100% {
+            left: 15px;
+        }
+    }
+}
+
+/* Estilos responsivos para telas entre 480px e 760px */
+@media all and (max-width: 760px) and (min-width: 480px) {
+    /* Ajuste do tamanho do título e animação para telas médias */
+    header h1 {
+        font-size: 35px;
+        text-align: left;
+        animation: titulo 3s linear infinite;
+    }
+
+    /* Animação personalizada do título para telas médias */
+    @keyframes titulo {
+        0% {
+            left: 5px;
+        }
+
+        50% {
+            left: 0px;
+        }
+    }
+
+    /* Ajuste do tamanho dos itens de lista para telas médias */
+    nav li {
+        font-size: 33px;
+        display: block;
+        margin: 20px 120px 20px 120px;
+    }
+}
